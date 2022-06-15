@@ -1,0 +1,20 @@
+<div class='grid lg:grid-cols-2 gap-x-6 gap-y-4'>
+  <div class='bg-white shadow sm:rounded-lg drop-shadow-md hover:drop-shadow-lg' *ngFor='let article of articles'>
+    <img
+      src='https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?&auto=format&fit=crop&w=1473&q=80'
+      alt='Sample Post' class='aspect-auto' />
+    <a routerLink='/article/{{article.slug}}'>
+      <h3 class='text-lg font-normal border-b border-gray-200 pb-2 py-2 px-4 my-2'>{{article.title}}</h3>
+    </a>
+    <p class='text-sm leading-5 py-4 text-gray-600 py-4 px-4'>Lorem Ipsum is simply dummy text of the printing and typesetting
+      industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+      type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+      typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+      Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem
+      Ipsum.</p>
+    <div class='focus:outline-none flex py-2 px-4 space-x-2'>
+      <div class='py-2 px-4 text-xs leading-3 text-blue-700 rounded-full bg-blue-100'>#lorem</div>
+      <div class='py-2 px-4 text-xs leading-3 text-blue-700 rounded-full bg-blue-100'>#ipsum</div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,10 @@ export class ArticlesService {
   private apiUrl = environment.apiUrl;
 
   latest(): Observable<Article[]> {
-    return this.http.get<Article[]>(this.apiUrl + '/latest/6');
+    return this.http.get<Article[]>(this.apiUrl + 'articles/latest/6');
+  }
+
+  detail(slug: string): Observable<Article> {
+    return this.http.get<Article>(this.apiUrl + 'articles/detail/' + slug);
   }
 }

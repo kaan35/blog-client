@@ -19,4 +19,8 @@ export class ArticlesService {
   detail(slug: string): Observable<Article> {
     return this.http.get<Article>(this.apiUrl + 'articles/detail/' + slug);
   }
+
+  archive(): Observable<Article[]> {
+    return this.http.get<Article[]>(this.apiUrl + 'articles/archive');
+  }
 }

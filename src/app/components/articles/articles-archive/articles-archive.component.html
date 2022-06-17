@@ -1,0 +1,12 @@
+<div>
+  <div class='my-20 text-center'>
+    <p class='mt-2 text-3xl leading-8 font-medium text-gray-900'>Archive</p>
+  </div>
+  <div class='my-20 space-y-4'>
+    <div class='bg-white shadow sm:rounded-lg drop-shadow-md hover:drop-shadow-lg py-4 px-2' *ngFor='let article of articles'>
+      <a routerLink='/article/{{article.slug}}'>
+        <h3 class='inline text-lg font-normal p-6 my-2'>{{article.title}}</h3>
+      </a>
+    </div>
+  </div>
+</div>

@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ArticlesLatestComponent } from './components/articles/articles-latest/articles-latest.component';
 import { ArticleDetailComponent } from './components/articles/article-detail/article-detail.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { ArchiveComponent } from './pages/archive/archive.component';
+import { ArticlesArchiveComponent } from './components/articles/articles-archive/articles-archive.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ArticleComponent } from './pages/article/article.component';
     FooterComponent,
     ArticlesLatestComponent,
     ArticleDetailComponent,
+    ArchiveComponent,
+    ArticlesArchiveComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [],

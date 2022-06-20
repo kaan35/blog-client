@@ -11,6 +11,8 @@ import { ArticleDetailComponent } from './components/articles/article-detail/art
 import { ArticleComponent } from './pages/article/article.component';
 import { ArchiveComponent } from './pages/archive/archive.component';
 import { ArticlesArchiveComponent } from './components/articles/articles-archive/articles-archive.component';
+import { PageComponent } from './pages/page/page.component';
+import { ContentComponent } from './components/pages/content/content.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ArticlesArchiveComponent } from './components/articles/articles-archive
     ArticleDetailComponent,
     ArchiveComponent,
     ArticlesArchiveComponent,
+    PageComponent,
+    ContentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [],

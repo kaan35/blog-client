@@ -1,0 +1,8 @@
+<div *ngIf='page'>
+  <div class='my-20 text-center'>
+    <p class='mt-2 text-3xl leading-8 font-medium text-gray-900'>{{page.title}}</p>
+  </div>
+  <div class='my-20 space-y-4'>
+    <div [innerHTML]='page.content'></div>
+  </div>
+</div>

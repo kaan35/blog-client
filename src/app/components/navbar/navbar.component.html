@@ -30,10 +30,6 @@
         <a routerLink='/archive' class='p-3 rounded-md hover:bg-blue-600 hover:text-white'>Archive</a>
         <a href='#' class='p-3 rounded-md hover:bg-blue-600 hover:text-white'>Contact</a>
       </nav>
-      <div class='hidden md:flex space-x-4 items-center justify-end md:flex-1 lg:w-0'>
-        <a href='#' class='hover:text-blue-600'> Sign in </a>
-        <a href='#' class='btn-primary'> Sign up </a>
-      </div>
     </div>
   </div>
   <div [ngClass]="{'opacity-100': showNavbarModal, 'opacity-0 invisible': !showNavbarModal}"
@@ -47,15 +43,6 @@
             <a routerLink='/archive' class='p-3 rounded-md hover:bg-blue-600 hover:text-white'>Archive</a>
             <a href='#' class='p-3 rounded-md hover:bg-blue-600 hover:text-white'>Contact</a>
           </nav>
-        </div>
-      </div>
-      <div class='py-6 px-5 space-y-6'>
-        <div>
-          <a href='#' class='btn-primary'> Sign up </a>
-          <p class='mt-6 text-center text-base font-medium'>
-            Existing member?
-            <a href='#' class='text-blue-600 hover:text-blue-900'> Sign in </a>
-          </p>
         </div>
       </div>
     </div>

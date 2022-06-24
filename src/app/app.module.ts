@@ -13,6 +13,8 @@ import { ArchiveComponent } from './pages/archive/archive.component';
 import { ArticlesArchiveComponent } from './components/articles/articles-archive/articles-archive.component';
 import { PageComponent } from './pages/page/page.component';
 import { ContentComponent } from './components/pages/content/content.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
+import { ContactComponent } from './components/forms/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { ContentComponent } from './components/pages/content/content.component';
     ArticlesArchiveComponent,
     PageComponent,
     ContentComponent,
+    ContactUsComponent,
+    ContactComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserModule, HttpClientModule],
   providers: [],

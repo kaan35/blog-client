@@ -15,6 +15,7 @@ import { PageComponent } from './pages/page/page.component';
 import { ContentComponent } from './components/pages/content/content.component';
 import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { ContactComponent } from './components/forms/contact/contact.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,13 @@ import { ContactComponent } from './components/forms/contact/contact.component';
     ContactUsComponent,
     ContactComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, BrowserModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

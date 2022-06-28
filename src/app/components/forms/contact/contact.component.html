@@ -1,12 +1,44 @@
 <div class='my-20 text-center'>
   <p class='mt-2 text-3xl leading-8 font-medium text-gray-900'>Contact</p>
 </div>
-<form action='#' method='POST'>
+<form [formGroup]='formData' (ngSubmit)='onSubmit()'>
   <div class='space-y-5 sm:w-1/2 mx-auto my-20 px-5'>
+    <div [ngClass]="(notificationShow ? 'block' : 'hidden')">
+      <div class='bg-white rounded-lg shadow-lg p-5'>
+        <div class='flex justify-between'>
+          <div class='flex-none w-14 items-center'>
+            <div *ngIf='notificationStatus=== "success"'>
+              <div class='bg-green-200 rounded-full p-2'>
+                <svg xmlns='http://www.w3.org/2000/svg' class='w-auto text-green-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'
+                     stroke-width='2'>
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' />
+                </svg>
+              </div>
+            </div>
+            <div *ngIf='notificationStatus=== "error"'>
+              <div class='bg-red-200 rounded-full p-2'>
+                <svg xmlns='http://www.w3.org/2000/svg' class='w-auto text-red-700' fill='none' viewBox='0 0 24 24' stroke='currentColor'
+                     stroke-width='2'>
+                  <path stroke-linecap='round' stroke-linejoin='round' d='M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class='flex-auto'>
+            <div class='text-center flex flex-col text-center items-center'>
+              <h3 class='text-lg leading-6 font-medium text-gray-900'>Notification</h3>
+              <div class='mt-2'>
+                <p class='text-sm text-gray-500'>{{notificationMessage}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
       <label>
         <div class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">First name</div>
-        <input type='text' name='firstname' required
+        <input type='text' name='firstName' formControlName='firstName' required
                class='mt-1 px-3 py-2
                border shadow-sm border-slate-300
                placeholder-slate-400
@@ -18,7 +50,7 @@
     <div>
       <label>
         <div class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Last name</div>
-        <input type='text' name='lastname' required
+        <input type='text' name='lastName' formControlName='lastName' required
                class='mt-1 px-3 py-2
                border shadow-sm border-slate-300
                placeholder-slate-400
@@ -30,7 +62,7 @@
     <div>
       <label>
         <div class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Email</div>
-        <input type='email' name='email' required
+        <input type='email' name='email' formControlName='email' required
                class='mt-1 px-3 py-2
                border shadow-sm border-slate-300
                placeholder-slate-400
@@ -41,7 +73,7 @@
     </div>
     <div>
       <div class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Message</div>
-      <textarea required class='mt-1 px-3 py-2
+      <textarea name='message' formControlName='message' required class='mt-1 px-3 py-2
                border shadow-sm border-slate-300
                placeholder-slate-400
                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-current

@@ -31,10 +31,16 @@ export class ContactComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    this.contact.onSubmit(this.formData.value).subscribe((response) => {
+    if (this.formData.valid) {
+      this.contact.onSubmit(this.formData.value).subscribe((response) => {
+        this.notificationShow = true;
+        this.notificationMessage = response.message;
+        this.notificationStatus = response.status;
+      });
+    } else {
       this.notificationShow = true;
-      this.notificationMessage = response.message;
-      this.notificationStatus = response.status;
-    });
+      this.notificationMessage = 'Form not valid';
+      this.notificationStatus = 'error';
+    }
   }
 }

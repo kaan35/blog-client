@@ -46,6 +46,14 @@
                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-current
                w-full rounded-md'
                placeholder='First name' />
+        <div *ngIf="formData.controls['firstName'].touched && formData.controls['firstName'].invalid">
+          <div *ngIf="formData.controls['firstName'].errors?.['required']">
+            <p class='mt-2 text-red-600 text-sm'>First name is required.</p>
+          </div>
+          <div *ngIf="formData.controls['firstName'].errors?.['minlength']">
+            <p class='mt-2 text-red-600 text-sm'>First name must be at least 3 characters long.</p>
+          </div>
+        </div>
       </label>
     </div>
     <div>
@@ -59,6 +67,14 @@
                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-current
                w-full rounded-md'
                placeholder='Last name' />
+        <div *ngIf="formData.controls['lastName'].touched && formData.controls['lastName'].invalid">
+          <div *ngIf="formData.controls['lastName'].errors?.['required']">
+            <p class='mt-2 text-red-600 text-sm'>Last name is required.</p>
+          </div>
+          <div *ngIf="formData.controls['lastName'].errors?.['minlength']">
+            <p class='mt-2 text-red-600 text-sm'>Last name must be at least 3 characters long.</p>
+          </div>
+        </div>
       </label>
     </div>
     <div>
@@ -72,6 +88,14 @@
                focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-current
                w-full rounded-md'
                placeholder='Email' />
+        <div *ngIf="formData.controls['email'].touched && formData.controls['email'].invalid">
+          <div *ngIf="formData.controls['email'].errors?.['required']">
+            <p class='mt-2 text-red-600 text-sm'>Email is required.</p>
+          </div>
+          <div *ngIf="formData.controls['email'].errors?.['email']">
+            <p class='mt-2 text-red-600 text-sm'>Please provide a valid email address.</p>
+          </div>
+        </div>
       </label>
     </div>
     <div>

@@ -17,10 +17,19 @@ export class ContactComponent implements OnInit {
   notificationMessage: string | undefined;
   notificationStatus: string | undefined;
   formData = new FormGroup({
-    firstName: new FormControl('', [Validators.required]),
-    lastName: new FormControl(''),
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    message: new FormControl(''),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+    ]),
   });
 
   constructor(

@@ -3,4 +3,4 @@ FROM node:alpine AS build
 WORKDIR /app/client
 COPY client/package*.json ./
 RUN npm i -g @angular/cli && npm i
-CMD ["ng", "serve", "--host", "0.0.0.0","--port","4200"]
+CMD ["ng", "serve", "--host", "0.0.0.0","--port","4000"]

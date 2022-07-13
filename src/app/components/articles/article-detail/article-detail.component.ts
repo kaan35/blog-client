@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { ArticlesService } from '../articles.service';
 import { Article } from '../article';
 
@@ -13,13 +14,15 @@ export class ArticleDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private titleService: Title
   ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     const slug = String(this.route.snapshot.paramMap.get('slug'));
-    this.articlesService
-      .detail(slug)
-      .subscribe((article) => (this.article = article));
+    this.articlesService.detail(slug).subscribe((article) => {
+      this.titleService.setTitle(article.title);
+      return (this.article = article);
+    });
   }
 }

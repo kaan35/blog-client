@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 import { Page } from '../page';
 import { PagesService } from '../pages.service';
 
@@ -13,11 +14,15 @@ export class ContentComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private pagesService: PagesService
+    private pagesService: PagesService,
+    private titleService: Title
   ) {}
 
   ngOnInit(): void {
     const slug = String(this.route.snapshot.paramMap.get('slug'));
-    this.pagesService.detail(slug).subscribe((page) => (this.page = page));
+    this.pagesService.detail(slug).subscribe((page) => {
+      this.titleService.setTitle(page.title);
+      return (this.page = page);
+    });
   }
 }
